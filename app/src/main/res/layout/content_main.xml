@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+    <android.support.constraint.ConstraintLayout
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:gravity="center_vertical"
+            android:text="2019-06"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <huaan.com.statisticsdemo.widget.CircularRingView
+            android:id="@+id/crv_attendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.168"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <TextView
+            android:id="@+id/tv_attendance_report_sum"
+            style="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123456"
+            app:layout_constraintBottom_toBottomOf="@+id/crv_attendance"
+            app:layout_constraintEnd_toEndOf="@+id/crv_attendance"
+            app:layout_constraintStart_toStartOf="@+id/crv_attendance"
+            app:layout_constraintTop_toTopOf="@+id/crv_attendance" />
+
+        <TextView
+            android:id="@+id/tv_attendance_report_att"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="24dp"
+            android:drawableStart="@drawable/ic_icon_rectangle_green"
+            android:text="出勤"
+            app:layout_constraintStart_toEndOf="@+id/crv_attendance"
+            app:layout_constraintTop_toTopOf="@+id/crv_attendance" />
+
+        <TextView
+            android:drawableStart="@drawable/ic_icon_rectangle_gray_yello"
+            android:id="@+id/tv_attendance_report_late"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="迟到"
+            app:layout_constraintStart_toStartOf="@+id/tv_attendance_report_att"
+            app:layout_constraintTop_toBottomOf="@+id/tv_attendance_report_att" />
+        <TextView
+            android:drawableStart="@drawable/ic_icon_rectangle_light_yello"
+            android:id="@+id/tv_attendance_report_leave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="早退"
+            app:layout_constraintStart_toStartOf="@+id/tv_attendance_report_late"
+            app:layout_constraintTop_toBottomOf="@+id/tv_attendance_report_late" />
+
+        <TextView
+            android:id="@+id/tv_attendance_report_absent"
+            android:drawableStart="@drawable/ic_icon_rectangle_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="旷工"
+            app:layout_constraintStart_toStartOf="@+id/tv_attendance_report_leave"
+            app:layout_constraintTop_toBottomOf="@+id/tv_attendance_report_leave" />
+
+        <TextView
+            android:id="@+id/btn_attendance_more"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="查看详情"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>
