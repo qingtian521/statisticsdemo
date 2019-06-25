@@ -10,6 +10,10 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 
+
+/**
+ * actor 晴天 create 2019/6/24
+ */
 fun View.dp2px(dp: Float): Int {
     val scale = this.resources.displayMetrics.density
     return (dp * scale + 0.5f).toInt()
@@ -19,9 +23,7 @@ fun View.px2dp(px: Float): Int {
     val scale = this.resources.displayMetrics.density
     return (px / scale + 0.5f).toInt()
 }
-/**
- * actor 晴天 create 2019/6/24
- */
+
 class CircularRingView @JvmOverloads constructor(
         context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
@@ -103,18 +105,18 @@ class CircularRingView @JvmOverloads constructor(
     }
 
     /**
+     * 设置圆环厚度
+     */
+    fun setRingThickness(value: Int) {
+        this.mStrokeWidth = value
+    }
+
+    /**
      * 设置数据元素
      */
     fun setElementList(elements: MutableList<CircularRingElement>) {
         this.elements = elements
         postInvalidate()
-    }
-
-    /**
-     * 设置圆环厚度
-     */
-    fun setRingThickness(value: Int) {
-        this.mStrokeWidth = value
     }
 
     /**
